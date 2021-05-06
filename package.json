@@ -6,7 +6,7 @@
     "test": "cypress run",
     "cy:open": "cypress open"
   },
-  "author": "Walmyr Filho <wlsf82@gmail.com> (https://walmyr.dev)",
+  "author": "Ismael Nunes Martins <ismael.nunes.martins@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "cypress": "^6.8.0"
