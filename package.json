@@ -1,7 +1,7 @@
 {
   "name": "sample-project",
   "version": "1.0.0",
-  "description": "Sample project for a tech interview",
+  "description": "",
   "scripts": {
     "test": "cypress run",
     "cy:open": "cypress open"
