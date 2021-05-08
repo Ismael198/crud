@@ -4,11 +4,14 @@
   "description": "",
   "scripts": {
     "test": "cypress run",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "runHeadless": "cypress run --headless",
+    "runHeaded": "cypress run --headed --browser chrome"
+
   },
   "author": "Ismael Nunes Martins <ismael.nunes.martins@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^6.8.0"
+    "cypress": "^7.0.0"
   }
 }
