@@ -5,25 +5,20 @@ describe('Notes', () => {
      cy.login()
   })
 
-  it('creates a note', () => {
-    cy.contains('Create a new note').click()
-    cy.get('#content').type('Meu notebook')
-    cy.contains('Create').click()
-    cy.get('.list-group').should('contain', 'Meu notebook')
-  })
-
-  it('edits a note', () => {
-    cy.get('.list-group').contains('Meu notebook').click()
-    cy.get('#content').type(' updated')
-    cy.contains('Save').click()
-    cy.get('.list-group').should('contain', 'Meu notebook updated')
-    cy.get('.list-group:contains(Meu notebook updated)').should('be.visible')
-  })
-
-  it('deletes a note', () => {
-    cy.get('.list-group').contains('Meu notebook updated').click()
-    cy.contains('Delete').click()
-
-    cy.get('.list-group:contains(Meu notebook updated)').should('not.exist')
+  it('create, edit and delete a note', () => {
+    const note = 'Meu notebook'
+    const noteUpdated = `${note} updated`
+    cy.createNote(note)
+    //fazendo verificação se a nota foi criada
+    cy.get('.list-group').should('contain', note)
+    //edita a nota
+    cy.editNote(note)
+    //verificação que a nota foi editada
+    cy.get('.list-group').should('contain', noteUpdated)
+    cy.get(`.list-group:contains(${noteUpdated})`).should('be.visible')
+    //deleta a nota
+    cy.deleteNote(noteUpdated)
+    //verificação que a nota foi deletada
+    cy.get(`.list-group:contains(${noteUpdated})`).should('not.exist')
   })
 })

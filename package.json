@@ -5,8 +5,8 @@
   "scripts": {
     "test": "cypress run",
     "cy:open": "cypress open",
-    "cypress-run": "cypress run",
-    "cypress-open": "cypress open"
+    "cypress-run": "cypress run"
+    
   },
   "author": "Ismael Nunes Martins <ismael.nunes.martins@gmail.com>",
   "license": "MIT",
