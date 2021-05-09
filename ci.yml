@@ -1,0 +1,17 @@
+name: ci
+
+on: 
+  pull_request:
+    
+jobs:
+  cypress:
+
+    commitlint:
+      runs-on: macOs-latest
+      steps:
+        - uses: actions/checkout@v2
+          whith:
+            fetch-depth: 0
+        - run: npm install 
+        - run: npm start &
+        - run: npm run runHeadless
